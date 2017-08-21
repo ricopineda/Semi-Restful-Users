@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title> Edit Page </title>
+		</head>
+		<body>
+			<h3> Update Warrior {{ users.id }} </h1>
+			<form action="/update/{{ users.id}}" method="post">
+			{% csrf_token %}
+				Full Name <input type="text" name="full_name">
+				Email <input type="text" name="email">
+				<input type="submit" value="Update">
+			</form>
+		</body>
+	</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title> Index </title>
+		</head>
+		<body>
+			<h1> Warriors </h1>
+			{% if messages %}
+
+				<p>{{ success }}</p>
+
+
+			{%endif%}
+			<table>
+				<tr>
+					<th> ID </th>
+					<th> Full Name </th>
+					<th> Email </th>
+					<th> Created At </th>
+					<th> Actions </th>
+				</tr>
+			{% for user in users %}
+				<tr>
+					<td>{{ user.id }}</td>
+					<td> {{ user.full_name }} </td>
+					<td> {{ user.email }} </td>
+					<td> {{ user.created_at }} </td>
+					<td> <a href="show/{{ user.id }}"> Show </a> <a href="edit/{{ user.id }}"> Edit </a> <a href="delete/{{user.id}}"> Delete </a> </td>
+				</tr>
+			{%endfor%}	
+			</table>
+			<a href="/create"> Add a new user </a>
+		</body>
+	</html>
